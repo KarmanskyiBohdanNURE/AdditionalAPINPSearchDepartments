@@ -132,7 +132,7 @@ function clearTableControllers()
     tableContainer.innerHTML = "";
 }
 
-function searchSettlements(pageNum, limit)
+function getWarehouses(pageNum, limit)
 {
     clearTable();
     const CityName = document.getElementById("cityName");
@@ -180,7 +180,7 @@ function fillTable()
         {
             pageNum--;
             pageNumberLabel.innerText = pageNum;
-            searchSettlements(pageNum, limit);
+            getWarehouses(pageNum, limit);
         }
     });
 
@@ -197,7 +197,7 @@ function fillTable()
         {
             pageNum++;
             pageNumberLabel.innerText = pageNum;
-            searchSettlements(pageNum, limit);
+            getWarehouses(pageNum, limit);
         }
     });
 
@@ -215,10 +215,10 @@ function fillTable()
         limit = parseInt(select.value);
         pageNum = 1;
         pageNumberLabel.innerText = pageNum;
-        searchSettlements(pageNum, limit);
+        getWarehouses(pageNum, limit);
     });
 
     tableControllerDown.appendChild(select);
 
-    searchSettlements(pageNum, limit);
+    getWarehouses(pageNum, limit);
 }
